@@ -1,5 +1,6 @@
 def solve():
-    # finds all multiples of integers a and b that are smaller than m.
+    # 1: finds all multiples of integers a and b that are smaller than m.
+    # runtime: O(1)
     a = 3
     b = 5
     m = 1000
@@ -7,7 +8,7 @@ def solve():
     # make m an inclusive bound
     m -= 1
 
-    # number of multiples of x
+    # number of multiples of a, b, and a*b
     na = m // a
     nb = m // b
     nab = m // (a * b)
