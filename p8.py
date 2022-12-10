@@ -14,7 +14,7 @@ def solve():
         pr = prod(ds[:n])
         ans = max(pr, ans)
 
-        for l, r in zip(ds[:n], ds[n:]):
+        for l, r in zip(ds, ds[n:]):
             pr //= l
             pr *= r
             ans = max(pr, ans)
