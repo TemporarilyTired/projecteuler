@@ -1,6 +1,7 @@
 def solve():
     # 2: finds the sum of all even fibonacci numbers that do not exceed m = 4 million
     # runtime: O(g_log m) where g_log is the logarithm the golden ratio as base
+    # ans = ...
     m = 4_000_000
     ans = 0
     a, b = 1, 2

@@ -1,15 +1,34 @@
 def solve():
+    # TODO: this isnt correct for some reason (698896)
+    # 4: find the largest palindromic number that is a product of two (d=3)-digit numbers
+    # runtime: O(10^(2 * d)) ?
+    # ans = not 698896
+    d = 3
+
+    minn = pow(10, d - 1)
+    maxn = minn * 10
+
+    def is_pal(x):
+        s = str(x)
+        return s == s[::-1]
+
+    print(max(filter(is_pal, (x * y for x, y in zip(range(minn, maxn), range(minn, maxn))))))
+
+
+def solve_deprecated():
+    # this method sucks im not gonna keep trying to get this working
+
     # 4: find the largest palindromic number that is a product of two (d=3)-digit numbers
     # runtime: O(10^(2 * d)). xd this is so bad, but there is always a palindrome very early
-    # in the search space, so it's doable for d<6.
-    d = 6
+    # in the search space, so it's doable for d<7.
+    d = 3
 
     # 100 for d = 3, 1000 for d = 4 etc
     minn = d_pow10 = pow(10, d - 1)
     maxn = d_pow10 * 10 - 1
 
     # unit value of the most significant digit. e.g., 100_000 for maxp = 998_001 (or d = 3)
-    d_pow10sq = d_pow10 * d_pow10 // 10
+    d_pow10sq = d_pow10 * d_pow10 * 10
 
     minp = minn * minn
     maxp = maxn * maxn
@@ -21,7 +40,7 @@ def solve():
     def has_factor_with_d_digits(x):
         return any(not x % p for p in range(minn, maxn+1))
 
-    for n in range(maxp, minp-1, -10):
+    for n in range(maxp // 10 * 10, minp-1, -10):
         if is_pal(np := n + n // d_pow10sq) and has_factor_with_d_digits(np):
             return print(np)
 
