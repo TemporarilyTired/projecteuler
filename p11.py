@@ -1,10 +1,9 @@
 def solve():
-    # TODO: not getting the correct answer for some reason
     from math import prod
     import numpy
     # 11: given the grid, find the n integers in a cardinal or diagonal line in the grid with the highest product
     # runtime: O(n^2)
-    # ans = not 382973773 ?
+    # ans = 70600674
     n = 4
     raw_grid = """08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00
@@ -45,9 +44,13 @@ def solve():
                 ans = max(pr, ans)
 
     # I do not really know a way to iterate through all directions in a clean way
-    # horizontal and vertical
-    for row_or_col in grid + grid.T:
-        iterate_line(row_or_col)
+    # horizontal
+    for row in grid:
+        iterate_line(row)
+
+    # vertical
+    for col in grid.T:
+        iterate_line(col)
 
     # diagonals
     for i in range(1-len(grid), len(grid)):
