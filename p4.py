@@ -1,8 +1,7 @@
 def solve():
-    # TODO: this isnt correct for some reason (698896)
     # 4: find the largest palindromic number that is a product of two (d=3)-digit numbers
-    # runtime: O(10^(2 * d)) ?
-    # ans = not 906609
+    # runtime: O(10^(2 * d))
+    # ans = 906609
     d = 3
 
     minn = pow(10, d - 1)
