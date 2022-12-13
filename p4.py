@@ -2,7 +2,7 @@ def solve():
     # TODO: this isnt correct for some reason (698896)
     # 4: find the largest palindromic number that is a product of two (d=3)-digit numbers
     # runtime: O(10^(2 * d)) ?
-    # ans = not 698896
+    # ans = not 906609
     d = 3
 
     minn = pow(10, d - 1)
@@ -12,7 +12,7 @@ def solve():
         s = str(x)
         return s == s[::-1]
 
-    print(max(filter(is_pal, (x * y for x, y in zip(range(minn, maxn), range(minn, maxn))))))
+    print(max(filter(is_pal, (x * y for x in range(minn, maxn) for y in range(x, maxn)))))
 
 
 def solve_deprecated():
