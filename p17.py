@@ -1,7 +1,7 @@
 def solve():
     # 17: find the total number of alphabetical character in all numbers from 1 through 1000 when written out
-    # runtime: O(..)
-    # ans =
+    # runtime: O(log10(x)) to write out an integer x
+    # ans = 21124
     n = 1000
     ans = 0
     for i in range(1, n + 1):
