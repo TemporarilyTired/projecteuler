@@ -1,6 +1,6 @@
 def solve():
     # 19: find the number of sundays that fell on the first of the month during the twentieth century
-    # runtime: O(..)
+    # runtime: O(n) for n ~ # of months
     # ans = 171
     ans = 0
     # 0, 1, 2,..., 6 = mon, tue, wed,..., sun
