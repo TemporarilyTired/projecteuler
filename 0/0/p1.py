@@ -1,7 +1,7 @@
 def solve():
     # 1: finds all multiples of integers a and b that are smaller than m.
     # runtime: O(1)
-    # ans = ...
+    # ans = 233168
     a = 3
     b = 5
     m = 1000
