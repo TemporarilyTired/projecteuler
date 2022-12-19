@@ -5,6 +5,7 @@ import sys
 def get_dir(p):
     return f"{p // 100 * 100 % 1000}/{p // 10 * 10 % 100}"
 
+
 def get_module(p):
     try:
         sys.path.append(get_dir(p))
