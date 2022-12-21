@@ -4,7 +4,9 @@ def solve():
     # ans = ..
     n = 1000
 
-    # Eratosthenes's sieve
+    # proposition 1: The biggest cycles come from prime numbers.
+    # proposition 2: The upper limit of the cycle length of 1/d is equal to d-1.
+    # Eratosthenes's sieve for primes
     is_prime = [False, False] + [True] * (n - 2)
     s = 0
     for p, b in enumerate(is_prime):
@@ -16,7 +18,7 @@ def solve():
     max_comp = 1
     max_prime = 1
     for d in range(1, n):
-        x = str(10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000//d)
+        x = str((10**1_000_0)//d)
         y = str(1/d)
         c = 1
         cycle = x[0]
@@ -25,8 +27,11 @@ def solve():
         while c + len(cycle) < len(x) and x[c:c + len(cycle)] != cycle:
             cycle += x[c]
             c += 1
-        if is_prime[d]:
+        if c >= d:
+            pass
+        elif is_prime[d]:
             max_prime = max(c, max_prime)
         else:
             max_comp = max(c, max_comp)
-        print(d, max_prime, max_comp, is_prime[d], c, x,  y)
+        # print(d, max_prime, max_comp, is_prime[d], c, x,  y)
+        print(d, max_prime, max_comp, is_prime[d], c, y)
