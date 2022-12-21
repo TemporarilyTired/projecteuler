@@ -27,7 +27,7 @@ def solve():
     print(ans)
 
 
-def solve_v2():
+def solve_deprecated():
     # 25: Find i such that the ith fibonacci number is the first fibonacci number with n digits
     # runtime: O(log n) if you assume the fibonacci approximation to be constant time,
     # which it is not because the values can get arbitrarily large. So probably closer to O(n log n) but not sure..
