@@ -1,8 +1,10 @@
 def solve():
     # 26: Find d < n such that 1/d has the largest recurring cycle in its decimal representation
     # runtime: O()
-    # ans = ..
+    # ans = 983
     n = 1000
+
+    hi_ans = (1, 1)
 
     # proposition 1: The biggest cycles come from prime numbers.
     # proposition 2: The upper limit of the cycle length of 1/d is equal to d-1.
@@ -11,27 +13,24 @@ def solve():
     s = 0
     for p, b in enumerate(is_prime):
         if b:
+            numerator = 10 ** (p * 2 + 1)
+            x = str(numerator // p)
+            y = str(1 / p)
+            c = 1
+            cycle = x[0]
+
+            # cycle check not complete (factor in the fact that cycles need not start at the beginning of the decimal
+            while x[c:c + len(cycle)] != cycle:
+                if c + len(cycle) >= len(x):
+                    print("=" * 50, "mmm bad", p, cycle)
+                    break
+                cycle += x[c]
+                c += 1
+            if c > hi_ans[0]:
+                hi_ans = c, p
+
             s += p
             for p2 in range(p * p, n, p):
                 is_prime[p2] = False
 
-    max_comp = 1
-    max_prime = 1
-    for d in range(1, n):
-        x = str((10**1_000_0)//d)
-        y = str(1/d)
-        c = 1
-        cycle = x[0]
-
-        # cycle check not complete (factor in the fact that cycles need not start at the beginning of the decimal
-        while c + len(cycle) < len(x) and x[c:c + len(cycle)] != cycle:
-            cycle += x[c]
-            c += 1
-        if c >= d:
-            pass
-        elif is_prime[d]:
-            max_prime = max(c, max_prime)
-        else:
-            max_comp = max(c, max_comp)
-        # print(d, max_prime, max_comp, is_prime[d], c, x,  y)
-        print(d, max_prime, max_comp, is_prime[d], c, y)
+    print(hi_ans[1])

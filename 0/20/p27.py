@@ -3,11 +3,11 @@ def solve():
     # the biggest sequence of only primes for x>=0. (Starting at 0)
     # runtime: O((n / log n)^3)
     # ans = -59231 (n=1000)
-    n = 10000
+    n = 1000
 
     #              0      1       2     3       ([4]    [5]   [6]    [7]   [8]    [9])
     prime_sieve = [False, False,  True, True] + [False, True, False, True, False, False] * ((n - 4) // 6) \
-                + list(bool(x % 3) and (x & 1) for x in range(4 + (n - 4) // 6 * 6, n + 1))
+        + list(bool(x % 3) and (x & 1) for x in range(4 + (n - 4) // 6 * 6, n + 1))
 
     for p, b in enumerate(prime_sieve):
         if b and p > 4:
