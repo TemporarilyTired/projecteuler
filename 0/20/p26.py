@@ -1,6 +1,6 @@
 def solve():
     # 26: Find d < n such that 1/d has the largest recurring cycle in its decimal representation
-    # runtime: O()
+    # runtime: O(..)
     # ans = 983
     n = 1000
 
