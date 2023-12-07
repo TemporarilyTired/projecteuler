@@ -16,4 +16,5 @@ def solve():
                 sieve[p2] = False
         if c == n:
             return print(p)
+
     print("prime", n, ">", len(sieve))
