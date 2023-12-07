@@ -1,5 +1,5 @@
 def solve():
-    # 18: find the path (moving adjecent as in a symmetric triangle) from top to bottom with the largest sum
+    # 18: find the path (moving adjacent as in a symmetric triangle) from top to bottom with the largest sum
     # runtime: O(n^2) where n is the number of layers in the pyramid
     # ans = 1074
     with open("data/p18.txt", "r") as f:
