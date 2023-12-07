@@ -12,7 +12,7 @@ def solve():
             for p in ps:
                 if not x % p:
                     x //= p
-            if x:
+            if x != 1:
                 ans *= x
                 ps.append(x)
         return ans
