@@ -1,5 +1,6 @@
 import importlib
 import sys
+from timeit import timeit
 
 
 def get_dir(p):
@@ -20,10 +21,19 @@ def get_module(p):
 
 if __name__ == '__main__':
     problem = None
+    use_timer = False
     while not problem:
         try:
-            problem = get_module(int(input()))
+            inp = input()
+            if inp[0] == 't':
+                inp = inp[1:]
+                use_timer = True
+            day_num = int(inp)
+            problem = get_module(day_num)
         except ValueError:
             print("Not a valid positive integer, try again: ")
 
-    problem.solve()
+    if use_timer:
+        print(timeit(problem.solve, number=10))
+    else:
+        problem.solve()
