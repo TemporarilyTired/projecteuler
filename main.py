@@ -2,6 +2,7 @@ import importlib
 import sys
 from timeit import timeit
 
+#todo: probably switch to returning a string in the solve functions
 
 def get_dir(p):
     return f"{p // 100 * 100 % 1000}/{p // 10 * 10 % 100}"
