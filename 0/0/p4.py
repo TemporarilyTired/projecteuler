@@ -1,3 +1,4 @@
+# todo: maybe improve this implementation
 def solve():
     # 4: find the largest palindromic number that is a product of two (d=3)-digit numbers
     # runtime: O(10^(2 * d))
