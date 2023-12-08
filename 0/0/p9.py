@@ -9,5 +9,6 @@ def solve():
         for b in range(a + 1, n - a):
             c2 = (n - a - b) * (n - a - b)
             if a2 + b * b == c2:
-                return print(a * b * (n - a - b))
-    print("no solution for n=", n)
+                return a * b * (n - a - b)
+
+    return f"no solution for n={n}"

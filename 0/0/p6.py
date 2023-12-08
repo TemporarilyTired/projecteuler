@@ -13,4 +13,4 @@ def solve():
     # use: sum{1, 2, ..., n-1, n} = n * (n+1) / 2
     sq_of_sums = sq(n * (n+1) >> 1)
 
-    print(sq_of_sums - sum_of_sqs)
+    return sq_of_sums - sum_of_sqs

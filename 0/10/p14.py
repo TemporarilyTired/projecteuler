@@ -20,4 +20,4 @@ def solve():
         if chain_length(i) > m:
             start = i
             m = chain_length(i)
-    print(start)
+    return start

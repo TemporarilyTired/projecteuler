@@ -1,8 +1,7 @@
 import importlib
+import math
 import sys
 from timeit import timeit
-
-# todo: probably switch to returning a string in the solve functions
 
 
 def get_dir(p):
@@ -36,6 +35,14 @@ if __name__ == '__main__':
             print("Not a valid positive integer, try again: ")
 
     if use_timer:
-        print(timeit(problem.solve, number=10))
-    else:
-        problem.solve()
+        single_run_time = timeit(problem.solve, number=1)
+        reps = 1.0 / single_run_time
+        if reps <= 1:
+            print(f"1 rep in {single_run_time:.8g}s")
+        else:
+            log10_reps = int(math.log10(reps) + 0.5)
+            rounded_log10_reps = min(1_000_000, log10_reps)
+            reps = 10 ** rounded_log10_reps
+            print(f"{reps} rep(s) in {timeit(problem.solve, number=reps):.8g}s")
+
+    print(problem.solve())

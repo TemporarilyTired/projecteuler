@@ -11,4 +11,4 @@ def solve():
     while b <= m:
         ans += b
         a, b = b, (b << 2) + a
-    print(ans)
+    return ans

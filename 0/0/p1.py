@@ -21,4 +21,4 @@ def solve():
 
     # add the multiples of a and multiples of b together and subtract the overlap
     n = natot * a + nbtot * b - nabtot * a * b
-    print(n)
+    return n

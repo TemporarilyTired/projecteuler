@@ -15,6 +15,6 @@ def solve():
             for p2 in range(p * p, len(sieve), p):
                 sieve[p2] = False
         if c == n:
-            return print(p)
+            return p
 
-    print("prime", n, ">", len(sieve))
+    return f"prime {n} > {len(sieve)}"

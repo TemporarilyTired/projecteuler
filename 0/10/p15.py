@@ -6,5 +6,4 @@ def solve():
     # ans = 137846528820
     n = 20
 
-    ans = factorial(2 * n) // pow(factorial(n), 2)
-    print(ans)
+    return factorial(2 * n) // pow(factorial(n), 2)

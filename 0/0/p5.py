@@ -19,4 +19,4 @@ def solve():
 
     n = lcm(range(1, n + 1))
 
-    print(n)
+    return n

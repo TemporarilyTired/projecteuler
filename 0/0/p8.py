@@ -20,7 +20,7 @@ def solve():
             pr *= r
             ans = max(pr, ans)
 
-    print(ans)
+    return ans
 
 
 # A slower implementation that has a runtime complexity that is constant in n (the number of digits in the product)
@@ -50,4 +50,4 @@ def solve_v2():
 
             ans = max(cur_prod, ans)
 
-    print(ans)
+    return ans

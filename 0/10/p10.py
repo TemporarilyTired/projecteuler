@@ -11,4 +11,4 @@ def solve():
             s += p
             for p2 in range(p * p, n, p):
                 sieve[p2] = False
-    print(s)
+    return s

@@ -18,4 +18,5 @@ def solve():
     for i in range(n - 2, n * n):
         s += i
         if n_factors(s) > n:
-            return print(s)
+            return s
+    return "failed"

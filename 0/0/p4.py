@@ -12,7 +12,7 @@ def solve():
         s = str(x)
         return s == s[::-1]
 
-    print(max(filter(is_pal, (x * y for x in range(minn, maxn) for y in range(x, maxn)))))
+    return max(filter(is_pal, (x * y for x in range(minn, maxn) for y in range(x, maxn))))
 
 
 def solve_deprecated():
@@ -42,6 +42,6 @@ def solve_deprecated():
 
     for n in range(maxp // 10 * 10, minp-1, -10):
         if is_pal(np := n + n // d_pow10sq) and has_factor_with_d_digits(np):
-            return print(np)
+            return np
 
-    print(-1)
+    return -1
