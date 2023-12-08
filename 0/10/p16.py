@@ -10,4 +10,4 @@ def solve():
         n2, d = divmod(n2, 10)
         ans += d
 
-    print(ans)
+    return ans

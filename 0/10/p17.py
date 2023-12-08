@@ -6,8 +6,7 @@ def solve():
     ans = 0
     for i in range(1, n + 1):
         ans += len(list(filter(lambda c: ord('a') <= ord(c) <= ord('z'), int_to_english(i))))
-
-    print(ans)
+    return ans
 
 
 # number to english language conversion

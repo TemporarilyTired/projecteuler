@@ -10,7 +10,7 @@ def solve():
         for m in range(12):
             ans += day == 6
             day = (day + month_length(m, y)) % 7
-    print(ans)
+    return ans
 
 
 def month_length(m, y):

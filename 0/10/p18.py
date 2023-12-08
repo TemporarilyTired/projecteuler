@@ -4,7 +4,7 @@ def solve():
     # ans = 1074
     with open("data/p18.txt", "r") as f:
         inp = f.read()
-    print(max_triangle_path(inp))
+    return max_triangle_path(inp)
 
 
 def max_triangle_path(s):
